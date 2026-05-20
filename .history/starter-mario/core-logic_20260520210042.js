@@ -220,12 +220,6 @@ function getFinalScore(basePoints, comboMultiplier, isStarActive) {
   //      - Add 500 bonus points to the total.
   //      - If the basePoints was already high (> 500), add ANOTHER 1000 points!
   // 3. Return the total.
-  let total = basePoints * comboMultiplier;
-  if (isStarActive) {
-    total += 500; 
-    if (basePoints > 500) {
-      total += 1000;
-    }
-  }
-  return total;
+
+  return 0;
 }

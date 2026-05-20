@@ -147,9 +147,7 @@ function getJumpPower(hasMushroom) {
   // TODO: Use IF/ELSE
   // 1. If hasMushroom is true, return 25 (Super Jump)
   // 2. Otherwise, return 18 (Normal Jump)
-  if (hasMushroom) {
-    return 25;
-  }
+
   return 18;
 }
 
@@ -167,16 +165,8 @@ function getStatusMessage(lives, hasStarPower) {
   // 2. Else if lives is 1, return "⚠️ LAST CHANCE! ⚠️"
   // 3. Else if lives is 0, return "💀 GAME OVER 💀"
   // 4. Otherwise, return "🍄 MARIO IS READY! 🍄"
-  if (hasStarPower) {
-    return "🌟 INVINCIBLE! 🌟";
-  }
-  if (lives === 1) {
-    return "⚠️ LAST CHANCE! ⚠️";
-  }
-  if (lives === 0) {
-    return "💀 GAME OVER 💀";
-  }
-  return "🍄 MARIO IS READY!  🍄";
+
+  return "RUNNING";
 }
 
 /**
@@ -194,13 +184,7 @@ function getGravityMultiplier(isJumping, isDashing) {
   // 2. If he is Jumping AND Dashing, return 0.8 (Floaty Jump)
   // 3. If he is Dashing but NOT jumping, return 2.5 (Fast Ground Physics)
   // 4. Otherwise, return 1.2
-  if (!isJumping && !isDashing) {
-    return 1.2;
-  } else if (isJumping && isDashing) {
-    return 0.8;
-  } else if (isDashing && !isJumping) {
-    return 2.5;
-  }
+
   return 1.2;
 }
 
@@ -220,12 +204,6 @@ function getFinalScore(basePoints, comboMultiplier, isStarActive) {
   //      - Add 500 bonus points to the total.
   //      - If the basePoints was already high (> 500), add ANOTHER 1000 points!
   // 3. Return the total.
-  let total = basePoints * comboMultiplier;
-  if (isStarActive) {
-    total += 500; 
-    if (basePoints > 500) {
-      total += 1000;
-    }
-  }
-  return total;
+
+  return 0;
 }
